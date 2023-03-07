@@ -1,1 +1,6 @@
-hola como estas
+-Para actualizar o subir a GitHub
+estando en el bash de la carpeta
+
+git status //para verificar que estamos en la carpeta y rama
+git commit - m "<comition>" ej "comittion 1"
+git push origin master
