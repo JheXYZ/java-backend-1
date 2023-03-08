@@ -4,5 +4,5 @@ estando en el bash de la carpeta
 git status //para verificar que estamos en la carpeta y rama
 git add . //añadimos los archivos
 git status //verificamos que estamos por subir los archivos, en verde
-git commit -m "<comition>" ej "comittion 1"
-git push origin master
+git commit -m "<comition>" //seleccionamos la comision, ej "comittion 1" 
+git push origin master //subimos los archivos
