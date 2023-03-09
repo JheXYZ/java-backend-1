@@ -5,7 +5,7 @@ package extras;
 
 import java.util.Scanner;
 
-public class Extra_pi {
+public class extra1 {
     public static void main(String[] args) {
         Scanner leer = new Scanner (System.in);
         System.out.println("Ingrese el radio y la altura:");
