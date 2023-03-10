@@ -23,3 +23,4 @@ public class Main {
         } while (c.equalsIgnoreCase("s") == false);
     }
 }
+
