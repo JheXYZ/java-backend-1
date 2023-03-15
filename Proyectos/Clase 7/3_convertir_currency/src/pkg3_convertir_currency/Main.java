@@ -32,13 +32,13 @@ public class Main {
     public static void convertir(float monto, String moneda) {
         switch (moneda.toLowerCase()) {
             case "dolares":
-                System.out.println("€" + monto + " en dolares serían: U$D " + monto * 1.28611 );
+                System.out.println("€" + monto + " en dolares serían: U$D " + Math.ceil((monto * 1.28611)*100)/100); //redondea hacia arriba (ceil) y dos decimales ((monto*x)100)/100
                 break;
             case "yenes":
-                System.out.println("€" + monto + " en yenes serían: ¥ " + monto * 129.852 );
+                System.out.println("€" + monto + " en yenes serían: ¥ " + Math.ceil((monto * 129.852)*100)/100);
                 break;
             case "libras":
-                System.out.println("€" + monto + " en libras serían: £ " + monto * 0.86 );
+                System.out.println("€" + monto + " en libras serían: £ " + Math.ceil((monto * 0.86)*100)/100); 
                 break;
             default:
                 System.out.println("Tipo de moneda invalida");
