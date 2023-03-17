@@ -20,7 +20,7 @@ public class Main {
     Scanner leer = new Scanner(System.in);
 
     System.out.println("Ingrese una frase");
-    String frase = leer.nextLine().toUpperCase();
+    String frase = leer.nextLine();
     String retorno = intercambio(frase);
     System.out.print(retorno);
     System.out.println(" ");
@@ -54,7 +54,6 @@ public static String intercambio(String frase) {
     }
     System.out.println("");
     return fraseNueva;
-    
-}
+    }
 }
 

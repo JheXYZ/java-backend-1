@@ -25,7 +25,6 @@ public class Main {
         } else {
             System.out.println(num + " no es primo");
         }
-        
     }
     public static boolean primo(int num) {
         int c = 0;
