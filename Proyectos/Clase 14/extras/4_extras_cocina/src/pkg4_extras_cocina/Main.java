@@ -6,15 +6,76 @@
 */
 package pkg4_extras_cocina;
 
-import pkg4_extras_cocina.entidades.Cocina;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+class Receta {
+    String nombre;
+    List<String> ingredientes;
+
+    public Receta(String nombre, List<String> ingredientes) {
+        this.nombre = nombre;
+        this.ingredientes = ingredientes;
+    }
+}
+
+class Cocina {
+    List<Receta> recetas;
+
+    public Cocina() {
+        this.recetas = new ArrayList<>();
+    }
+
+    public void agregarReceta(Receta receta) {
+        this.recetas.add(receta);
+    }
+
+    public Receta buscarReceta(String nombre) {
+        for (Receta receta : this.recetas) {
+            if (receta.nombre.equals(nombre)) {
+                return receta;
+            }
+        }
+        return null;
+    }
+
+    public List<Receta> recetasDisponibles(List<String> ingredientesDisponibles) {
+        List<Receta> recetasDisponibles = new ArrayList<>();
+        for (Receta receta : this.recetas) {
+            boolean disponible = true;
+            for (String ingrediente : receta.ingredientes) {
+                if (!ingredientesDisponibles.contains(ingrediente)) {
+                    disponible = false;
+                    break;
+                }
+            }
+            if (disponible) {
+                recetasDisponibles.add(receta);
+            }
+        }
+        return recetasDisponibles;
+    }
+}
 
 public class Main {
     public static void main(String[] args) {
-        Cocina receta [] = new Cocina [4];
-        
-        if (receta[0] == receta[1]) {
-            System.out.println("Match en ingredientes");
+        Cocina cocina = new Cocina();
+
+        // Agregar nuevas recetas
+        cocina.agregarReceta(new Receta("Torta de chocolate", Arrays.asList("harina", "azúcar", "huevos", "chocolate")));
+        cocina.agregarReceta(new Receta("Pizza margarita", Arrays.asList("harina", "tomate", "queso")));
+
+        // Buscar una receta por nombre
+        Receta tortaDeChocolate = cocina.buscarReceta("Torta de chocolate");
+        System.out.println(tortaDeChocolate.nombre);
+
+        // Obtener la lista de recetas que se pueden preparar con los ingredientes disponibles en la cocina
+        List<String> ingredientesDisponibles = Arrays.asList("harina", "azúcar", "huevos", "chocolate");
+        List<Receta> recetasDisponibles = cocina.recetasDisponibles(ingredientesDisponibles);
+        for (Receta receta : recetasDisponibles) {
+            System.out.println(receta.nombre);
         }
     }
-    
 }
+
