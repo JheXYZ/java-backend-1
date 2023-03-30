@@ -7,9 +7,15 @@
 */
 package pkg6_extras_empleados;
 
+import java.util.Scanner;
+import pkg6_extras_empleados.entidades.Empleado;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
         
-        
+        System.out.println("Ingrese el nombre, edad y salario");
+        Empleado empleado = new Empleado(leer.next(), leer.nextInt(), leer.nextFloat());
+        empleado.calcular_aumento();
     }
 }
