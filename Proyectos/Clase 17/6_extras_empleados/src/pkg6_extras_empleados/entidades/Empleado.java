@@ -18,14 +18,6 @@ public class Empleado {
         this.salario = salario;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
     public float getSalario() {
         return salario;
     }
