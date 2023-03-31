@@ -12,7 +12,7 @@ import pkg1_libros.entidades.Libro;
 
 public class Main {
     public static void main(String[] args) {
-        
+
         Libro libro1 = new Libro();
         llenar(libro1);
         mostrar(libro1);
@@ -20,7 +20,7 @@ public class Main {
     
     public static void llenar(Libro libro) {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        
+
         System.out.print("ISBN: ");
         libro.ISBN = leer.nextInt();
         System.out.print("Titulo: ");

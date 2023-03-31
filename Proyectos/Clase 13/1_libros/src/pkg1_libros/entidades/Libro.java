@@ -16,6 +16,8 @@ public class Libro {
     
     public Libro(){}
     
+    
+    
     public Libro(int ISBN, String Autor, int paginas, String titulo) {
         this.ISBN = ISBN;
         this.Autor = Autor;
