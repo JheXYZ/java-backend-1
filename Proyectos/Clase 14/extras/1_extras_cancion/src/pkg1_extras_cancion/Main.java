@@ -14,9 +14,10 @@ public class Main {
 
     public static void main(String[] args) {
         Cancion cancion = new Cancion();
-        
+
         ingresar(cancion);
-        mostrar(cancion);
+        cancion.getAutor();
+        cancion.getTitulo();
     }
     
     public static void ingresar(Cancion cancion) {
@@ -26,9 +27,5 @@ public class Main {
         cancion.setAutor(leer.next());
         System.out.print("Ingrese el nombre de la canción: ");
         cancion.setTitulo(leer.next());
-    }
-    
-    public static void mostrar(Cancion cancion) {
-        System.out.println("Autor: " + cancion.getAutor() + "\nTitulo: " + cancion.getTitulo());
     }
 }

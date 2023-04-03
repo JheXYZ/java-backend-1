@@ -17,12 +17,12 @@ public class Cancion {
         this.titulo = titulo;
     }
 
-    public String getAutor() {
-        return autor;
+    public void getAutor() {
+        System.out.println("El autor es: " + autor);
     }
 
-    public String getTitulo() {
-        return titulo;
+    public void getTitulo() {
+        System.out.println("El titulo es: " + titulo);
     }
 
     public void setAutor(String autor) {
