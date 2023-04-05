@@ -15,12 +15,12 @@ public class ServiceNIF {
     Scanner leer = new Scanner(System.in);
     char letra [] = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
         
-    public void DNI(NIF nif){
+    public void setDNI(NIF nif){
         System.out.print("DNI: ");
         nif.setDNI(leer.nextLong());
     }
 
-    public void crearNIF(NIF nif){
+    public void setNIF(NIF nif){
         nif.setLetra(letra[(int)nif.getDNI() % 23]);
     }
     

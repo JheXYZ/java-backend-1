@@ -29,8 +29,8 @@ public class Extras_2_NIF {
         ServiceNIF SN = new ServiceNIF();
         NIF nif = new NIF();
         
-        SN.DNI(nif);
-        SN.crearNIF(nif);
+        SN.setDNI(nif);
+        SN.setNIF(nif);
         SN.mostrar(nif);
     }
 }
