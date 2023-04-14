@@ -20,7 +20,6 @@ package extras_2_NIF;
 
 import Entidades.NIF;
 import Servicios.ServiceNIF;
-
 /**
  * @author JheX
 */

@@ -88,7 +88,7 @@ public class Main {
             }
             if (i == 3) {
                 System.out.println("El " + (ideal*100)/4 + "% está en su peso ideal\nEl " + (debajo*100)/4 + "% está por debajo de su peso ideal\nEl " + (encima*100)/4 + "% está por encíma de su peso ideal");
-                System.out.println(edad + " son mayores de edad y " + Math.abs(edad - 4) + " menores de edad");
+                System.out.println((edad*100)/4 + "% son mayores de edad y " + (Math.abs(edad - 4)*100)/4 + "% menores de edad");
             }
         }
     }
