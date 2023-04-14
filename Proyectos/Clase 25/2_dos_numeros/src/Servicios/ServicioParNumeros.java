@@ -16,19 +16,22 @@ public class ServicioParNumeros {
     }
     
     public void mostrar(ParNumero num){
-        System.out.println("Número 1: " + num.getNum1() + ", número 2: " + num.getNum2());
+        System.out.println("Número 1: " + num.getNum1() + "\nNúmero 2: " + num.getNum2());
     }
     
     public int mayor(ParNumero num){
-        if (num.getNum1() > num.getNum2()){
-            System.out.println("El número 1 es mayor que número 2. " + num.getNum1() + " > " + num.getNum2());
-            return 1;
-        } else if (num.getNum1() < num.getNum2()){
-            System.out.println("El número 2 es mayor que número 1. " + num.getNum2() + " > " + num.getNum2());
-            return -1;
-        } else {
-            System.out.println("Son iguales");
-            return 0;
+        switch (Double.compare(num.getNum1(), num.getNum2())){
+            case 1:
+                System.out.println("El número 1 es mayor que el segundo. " + num.getNum1() + " > " + num.getNum2());
+                return 1;
+            case -1:
+                System.out.println("El número 2 es mayor que el primero. " + num.getNum2() + " > " + num.getNum1());
+                return -1;
+            case 0:
+                System.out.println("Los números son iguales");
+                return 0;
+            default:
+                return 2;
         }
     }
     
