@@ -6,7 +6,6 @@
 package Entidades;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * @author JheX
@@ -41,7 +40,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "{" + nombre + ", Notas=" + Arrays.toString(notas) +'}'; //To change body of generated methods, choose Tools | Templates.
+        return "{" + nombre + ", Notas=" + Arrays.toString(notas) +'}';
     }
 
 }

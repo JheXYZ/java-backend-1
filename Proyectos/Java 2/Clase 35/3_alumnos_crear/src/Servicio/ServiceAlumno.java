@@ -32,7 +32,7 @@ public class ServiceAlumno {
                     alumnos.add(al);
                     break;
                 case 2:
-                    System.out.println("Los alumnos son: " + alumnos.toString());
+                    System.out.println("Los alumnos son: " + alumnos);
                     fin = true;
                     break;
             }
@@ -59,5 +59,4 @@ public class ServiceAlumno {
             }
         }
     }
-
 }
