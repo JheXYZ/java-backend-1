@@ -32,8 +32,9 @@ public class Main {
         ArrayList<Pelicula> Peliculas = SP.IngresarPeliculas();
         
         SP.mostrarPeliculas(Peliculas);
-        SP.mostrarPelisMax1(Peliculas);
+        SP.mostrarPelisMayor1(Peliculas);
         SP.mostrarPelisMayorMenor(Peliculas);
+        SP.mostrarPelisMenorMayor(Peliculas);
         SP.mostrarPelisAlfaTitulo(Peliculas);
         SP.mostrarPelisAlfaDirector(Peliculas);
     }

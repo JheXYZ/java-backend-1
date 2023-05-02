@@ -53,7 +53,7 @@ public class ServicePelicula {
         System.out.println();
     }
     
-    public void mostrarPelisMax1(ArrayList<Pelicula> Peliculas){
+    public void mostrarPelisMayor1(ArrayList<Pelicula> Peliculas){
         System.out.println("Las peliculas mayores a 1 hora son:\n");
         Peliculas.forEach((pelicula) -> {
             if(pelicula.getDuracion() >= 1){
@@ -66,6 +66,15 @@ public class ServicePelicula {
     public void mostrarPelisMayorMenor(ArrayList<Pelicula> Peliculas){
         System.out.println("Peliculas de Mayor a Menor duración:\n");
         Collections.sort(Peliculas, (Pelicula p1, Pelicula p2) -> new Float(p2.getDuracion()).compareTo(p1.getDuracion()));
+        Peliculas.forEach((pelicula) -> {
+            System.out.println(pelicula);
+        });
+        System.out.println();
+    }
+    
+    public void mostrarPelisMenorMayor(ArrayList<Pelicula> Peliculas){
+        System.out.println("Peliculas de Menor a Mayor duración:\n");
+        Collections.sort(Peliculas, (Pelicula p1, Pelicula p2) -> new Float(p1.getDuracion()).compareTo(p2.getDuracion()));
         Peliculas.forEach((pelicula) -> {
             System.out.println(pelicula);
         });
