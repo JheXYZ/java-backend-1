@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  * @author JheX
@@ -42,26 +43,21 @@ public class ServiceProductos {
     }
 
     public void mostrarProductos(HashMap<String, Float> Productos) {
-        ArrayList<Map.Entry<String, Float>> listaProductos = new ArrayList<>(Productos.entrySet());
-        Collections.sort(listaProductos, (Map.Entry<String, Float> p1, Map.Entry<String, Float> p2) -> p1.getKey().compareTo(p2.getKey())); //extra para ordenar alfabeticamente
+        TreeMap<String, Float> prodOrdenados = new TreeMap<>(Productos);
         
         System.out.println("===Productos===");
-        listaProductos.forEach((producto) -> {
+        prodOrdenados.entrySet().forEach((producto) -> {
             System.out.println("$" + producto.getValue() + " | " + producto.getKey());
         });
     }
 
     public void crearProducto(HashMap<String, Float> Productos) {
-        boolean existe = false;
         System.out.print("Nombre: ");
         String nombre = leer.next();
-        for (Map.Entry<String, Float> producto : Productos.entrySet()) {
-            if (producto.getKey().equals(nombre)){
-                System.out.println("Ya hay un producto con el mismo nombre");
-                existe = true;
-            }
-        }
-        if (!existe){
+        
+        if (Productos.containsKey(nombre)) {
+            System.out.println("Ya hay un producto con el mismo nombre");
+        } else {
             System.out.print("Precio: ");
             float precio = leer.nextFloat();
             Productos.put(nombre, precio);
@@ -70,44 +66,30 @@ public class ServiceProductos {
     }
 
     public void modificar(HashMap<String, Float> Productos) {
-        boolean encontrado = false;
         mostrarProductos(Productos);
-
         System.out.print("Ingrese el producto a modificar: ");
         String produc = leer.next();
-        for (Map.Entry<String, Float> producto : Productos.entrySet()) {
-            if (producto.getKey().equals(produc)) {
-                System.out.print("Ingrese el nuevo precio: ");
-                producto.setValue(leer.nextFloat());
-                mostrarProductos(Productos);
-                System.out.println("Precio modificado correctamente");
-                encontrado = true;
-            }
-        }
-        if (!encontrado) {
+        
+        if (Productos.containsKey(produc)) {
+            System.out.print("Ingrese el nuevo precio: ");
+            Productos.put(produc, leer.nextFloat());
+            mostrarProductos(Productos);
+            System.out.println("Precio modificado correctamente");
+        } else {
             System.out.println("No se encuentra dicho producto");
         }
     }
 
     public void eliminarProducto(HashMap<String, Float> Productos) {
-        Iterator<Map.Entry<String, Float>> itProductos = Productos.entrySet().iterator();
-        boolean encontrado = false;
         mostrarProductos(Productos);
-
         System.out.print("Ingrese el producto a eliminar: ");
         String produc = leer.next();
-
-        while (itProductos.hasNext()) {
-            Map.Entry<String, Float> producto = itProductos.next();
-            if (producto.getKey().equals(produc)) {
-                itProductos.remove();
-                encontrado = true;
-                mostrarProductos(Productos);
-                System.out.println("Se ha eliminado correctamente");
-                break;
-            }
-        }
-        if (!encontrado) {
+        
+        if (Productos.containsKey(produc)) {
+            Productos.remove(produc);
+            mostrarProductos(Productos);
+            System.out.println("Se ha eliminado correctamente");
+        } else {
             System.out.println("No se encuentra dicho producto");
         }
     }
