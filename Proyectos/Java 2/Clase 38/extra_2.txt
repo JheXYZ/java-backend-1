@@ -1,0 +1,223 @@
+/*
+ 
+2. Crear una clase llamada CantanteFamoso. Esta clase guardará cantantes famosos y
+tendrá como atributos el nombre y discoConMasVentas.
+Se debe, además, en el main, crear una lista de tipo CantanteFamoso y agregar 5
+objetos de tipo CantanteFamoso a la lista. Luego, se debe mostrar los nombres de
+cada cantante y su disco con más ventas por pantalla.
+Una vez agregado los 5, en otro bucle, crear un menú que le de la opción al usuario de
+agregar un cantante más, mostrar todos los cantantes, eliminar un cantante que el
+usuario elija o de salir del programa. Al final se deberá mostrar la lista con todos los
+cambios.
+ */
+package Mains;
+
+import ObjetoService.FamosoService;
+import Objetos.CantanteFamoso;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Matias
+ */
+public class EX2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        FamosoService nuevo = new FamosoService();
+       
+        ArrayList<CantanteFamoso> lista = new ArrayList<>();
+        
+        System.out.println("CANTANTES FAMOSOS");
+        System.out.println("_________________");
+
+        for (int i = 0; i < 5; i++) {
+        System.out.println("Cantante "+(i+1));    
+        lista.add(nuevo.ingresarCantantes());
+         
+        }
+        
+        nuevo.mostrarcantantes(lista);
+        nuevo.Menu(lista);
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+}
+
+
+
+
+
+
+
+*
+
+2. Crear una clase llamada CantanteFamoso. Esta clase guardará cantantes famosos y
+tendrá como atributos el nombre y discoConMasVentas.
+Se debe, además, en el main, crear una lista de tipo CantanteFamoso y agregar 5
+objetos de tipo CantanteFamoso a la lista. Luego, se debe mostrar los nombres de
+cada cantante y su disco con más ventas por pantalla.
+Una vez agregado los 5, en otro bucle, crear un menú que le de la opción al usuario de
+agregar un cantante más, mostrar todos los cantantes, eliminar un cantante que el
+usuario elija o de salir del programa. Al final se deberá mostrar la lista con todos los
+cambios.
+ */
+package ObjetoService;
+
+import Objetos.CantanteFamoso;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Matias
+ */
+public class FamosoService {
+
+    Scanner enter = new Scanner(System.in);
+
+    public CantanteFamoso ingresarCantantes() {
+
+        System.out.println("Ingresa el nombre del cantante: ");
+        String nombre = enter.next();
+        System.out.println("Ingresar su disco mas famoso: ");
+        String disco = enter.next();
+
+        return new CantanteFamoso(nombre, disco);
+
+    }
+
+    public void Menu(ArrayList<CantanteFamoso> cantantes) {
+        int opc;
+        do {
+            System.out.println("");
+            System.out.println("MENU");
+            System.out.println("----");
+            System.out.println("1)Agregar cantante");
+            System.out.println("2)Mostrar cantantes");
+            System.out.println("3)Eliminar cantante");
+            System.out.println("4)Salir");
+            opc = enter.nextInt();
+            System.out.println("");
+            switch (opc) {
+
+                case 1:
+                    cantantes.add(ingresarCantantes());
+                    break;
+                case 2:
+                    mostrarcantantes(cantantes);
+                    break;
+                case 3:
+                    eliminar(cantantes);
+                    break;
+                case 4:
+                    opc = 4;
+                    break;
+            }
+        } while (opc != 4);
+    }
+
+    private void eliminar(ArrayList<CantanteFamoso> cantantes) {
+        System.out.println("ELIMINAR CANTANTE");
+        System.out.println("-----------------");
+        mostrarcantantes(cantantes);
+        System.out.println("Ingrese el nombre del cantante a eliminar: ");
+        String eliminar = enter.next();
+        boolean v = false;
+
+        for (int i = 0; i < cantantes.size(); i++) {
+            CantanteFamoso aux = cantantes.get(i);
+
+            if (aux.getNombre().equals(eliminar)) {
+                cantantes.remove(aux);
+                v = true;
+            }
+
+        }
+
+        if (v) {
+            System.out.println("LISTA ACTUALIZADA");
+            System.out.println("-----------------");
+            mostrarcantantes(cantantes);
+        } else {
+            System.out.println("No se encontro el cantante!");
+        }
+
+    }
+
+    public void mostrarcantantes(ArrayList<CantanteFamoso> cantantes) {
+        System.out.println("");
+        System.out.println("LISTA DE CANTANTES");
+        System.out.println("------------------");
+        for (CantanteFamoso cantanteFamoso : cantantes) {
+            System.out.println(cantanteFamoso);
+        }
+
+    }
+
+}
+
+
+
+
+
+*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Objetos;
+
+/**
+ *
+ * @author Matias
+ */
+public class CantanteFamoso {
+    
+    private String nombre;
+    private String disco;
+
+    public CantanteFamoso() {
+    }
+
+    public CantanteFamoso(String nombre, String disco) {
+        this.nombre = nombre;
+        this.disco = disco;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDisco() {
+        return disco;
+    }
+
+    public void setDisco(String disco) {
+        this.disco = disco;
+    }
+
+    @Override
+    public String toString() {
+        return  "Nombre: " + nombre + "|  Disco mas famoso: " + disco ;
+    }
+    
+    
+    
+    
+    
+    
+    
+}

@@ -50,7 +50,6 @@ public class ServiceProductos {
     public void crearProducto(HashMap<String, Float> Productos) {
         System.out.print("Nombre: ");
         String nombre = leer.next();
-        
         if (Productos.containsKey(nombre)) {
             System.out.println("Ya hay un producto con el mismo nombre");
         } else {
@@ -89,5 +88,4 @@ public class ServiceProductos {
             System.out.println("No se encuentra dicho producto");
         }
     }
-
 }
