@@ -65,7 +65,7 @@ public class ServicePelicula {
     
     public void mostrarPelisMayorMenor(ArrayList<Pelicula> Peliculas){
         System.out.println("Peliculas de Mayor a Menor duración:\n");
-        Collections.sort(Peliculas, (Pelicula p1, Pelicula p2) -> new Float(p2.getDuracion()).compareTo(p1.getDuracion()));
+        Collections.sort(Peliculas, (Pelicula p1, Pelicula p2) -> Float.valueOf(p2.getDuracion()).compareTo(p1.getDuracion()));
         Peliculas.forEach((pelicula) -> {
             System.out.println(pelicula);
         });
@@ -74,7 +74,7 @@ public class ServicePelicula {
     
     public void mostrarPelisMenorMayor(ArrayList<Pelicula> Peliculas){
         System.out.println("Peliculas de Menor a Mayor duración:\n");
-        Collections.sort(Peliculas, (Pelicula p1, Pelicula p2) -> new Float(p1.getDuracion()).compareTo(p2.getDuracion()));
+        Collections.sort(Peliculas, (Pelicula p1, Pelicula p2) -> Float.valueOf(p1.getDuracion()).compareTo(p2.getDuracion()));
         Peliculas.forEach((pelicula) -> {
             System.out.println(pelicula);
         });

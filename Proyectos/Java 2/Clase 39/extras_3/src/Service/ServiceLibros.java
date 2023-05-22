@@ -53,11 +53,10 @@ public class ServiceLibros {
                     encontrado = true;
                 }
             }
-            
         }
         if (!encontrado) {
-                System.out.println("No se encuentra tal libro");
-            }
+            System.out.println("No se encuentra tal libro");
+        }
     }
 
     public void devolverLibro(HashSet<Libro> Libreria) {

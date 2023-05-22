@@ -41,9 +41,9 @@ public class ServiceAlumno {
     }
 
     public void notaFinal(ArrayList<Alumno> Alumnos) {
-        boolean encontrado = false, fin = false;
+        boolean encontrado = false;
         
-        while (!fin){
+        while (!encontrado){
             System.out.print("¿Que alumno desea buscar? | Alumno: ");
             String al = leer.next();
             for (Alumno alumno: Alumnos) {
@@ -51,7 +51,6 @@ public class ServiceAlumno {
                     float notas[] = alumno.getNotas();
                     System.out.println("El promedio del alumno '" + al + "' es: " + (notas[0] + notas[1] + notas[2])/3);
                     encontrado = true;
-                    fin = true;
                 }
             }
             if (!encontrado){

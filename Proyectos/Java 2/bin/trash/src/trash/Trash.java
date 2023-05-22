@@ -5,6 +5,7 @@
  */
 package trash;
 
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 /**
@@ -12,21 +13,34 @@ import java.util.Scanner;
  * @author JheX
  */
 public class Trash {
+
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        int x = leer.nextInt();
-        float Sd = 0;
-        float Xc = x;
-        while(Xc != 0){
-            int d = (int)Xc/10;
-            if (x % d == 0){
-                Sd = Sd + d;
+        int num [] = new int [10];
+        int i = 1, digs = 0, c = 0;
+        System.out.print("Ingrese num: ");
+        num[1] = leer.nextInt();
+        while(num[i] > 0){
+            int aux = num[i];
+            while(aux != 0){
+                aux = aux /10;
+                c++;
             }
-            Xc = (int)Xc/10;
+            if (c > digs){
+                digs = c;
+            }
+            i++;
+            c = 0;
+            System.out.print("Ingrese num: ");
+            num[i] = leer.nextInt();
         }
-        if(Sd>0){
-            System.out.println(x + " x multiplo de Sd" + Sd);
+        System.out.println("c: " +  c + ", digs: " + digs);
+        i--;
+        while (i > 0){
+            if ((int) (num[i] / (Math.pow(10, digs) / 10)) != 0){
+                System.out.println(num[i]);
+            }
+            i--;
         }
     }
-    
 }

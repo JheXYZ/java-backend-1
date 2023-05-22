@@ -40,7 +40,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "{" + nombre + ", Notas=" + Arrays.toString(notas) +'}';
+        return "Nombre=" + nombre + ", Notas=" + Arrays.toString(notas);
     }
 
 }

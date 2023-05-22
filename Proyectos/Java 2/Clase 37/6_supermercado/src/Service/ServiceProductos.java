@@ -33,7 +33,6 @@ public class ServiceProductos {
                 case 4:
                     System.out.println("Saliendo...");
                     fin = true;
-
             }
         }
     }
