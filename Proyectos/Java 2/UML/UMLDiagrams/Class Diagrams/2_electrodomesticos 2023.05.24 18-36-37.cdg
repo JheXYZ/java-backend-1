@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="2_electrodomesticos">
+  <ClassDiagramComponents>
+    <Class name="Lavadora" package="Entidades" visibility="public" xPosition="457.0" yPosition="77.0">
+      <Fields>
+        <Field name="carga" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="float" name="carga"/>
+          <Argument type="double" name="precio"/>
+          <Argument type="double" name="peso"/>
+          <Argument type="String" name="color"/>
+          <Argument type="char" name="consumoElectrico"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCarga" returnType="float" visibility="public"/>
+        <Method name="setCarga" returnType="void" visibility="public">
+          <Argument type="float" name="carga"/>
+        </Method>
+        <Method name="crearLavadora" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Televisor" package="Entidades" visibility="public" xPosition="171.0" yPosition="332.0">
+      <Fields>
+        <Field name="tamanioPantalla" type="float" visibility="private"/>
+        <Field name="DTV" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="float" name="tamanioPantalla"/>
+          <Argument type="boolean" name="DTV"/>
+          <Argument type="double" name="precio"/>
+          <Argument type="double" name="peso"/>
+          <Argument type="String" name="color"/>
+          <Argument type="char" name="consumoElectrico"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTamanioPantalla" returnType="float" visibility="public"/>
+        <Method name="setTamanioPantalla" returnType="void" visibility="public">
+          <Argument type="float" name="tamanioPantalla"/>
+        </Method>
+        <Method name="isDTV" returnType="boolean" visibility="public"/>
+        <Method name="setDTV" returnType="void" visibility="public">
+          <Argument type="boolean" name="DTV"/>
+        </Method>
+        <Method name="crearTelevisor" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="pkg2_electrodomesticos" visibility="public" xPosition="171.0" yPosition="77.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

@@ -36,7 +36,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Espectador" package="Entidades" visibility="public" xPosition="19.0" yPosition="295.0">
+    <Class name="Espectador" package="Entidades" visibility="public" xPosition="13.0" yPosition="333.0">
       <Fields>
         <Field name="nombre" type="String" visibility="private"/>
         <Field name="edad" type="int" visibility="private"/>
@@ -99,7 +99,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Sala" package="Entidades" visibility="public" xPosition="877.0" yPosition="295.0">
+    <Class name="Sala" package="Entidades" visibility="public" xPosition="877.0" yPosition="275.0">
       <Fields>
         <Field name="pelicula" type="Pelicula" visibility="private"/>
         <Field name="espectadores" type="ArrayList&lt;Espectador&gt;" visibility="private"/>
@@ -166,17 +166,17 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <UseRelation source="Service.ServiceSala" target="Entidades.Sala" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="asientos" source="Entidades.Sala" target="Entidades.Asiento" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Asiento&gt;"/>
-    <HasRelation name="espectadores" source="Entidades.Sala" target="Entidades.Espectador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Espectador&gt;"/>
-    <UseRelation source="Entidades.Sala" target="Entidades.Espectador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Service.ServiceSala" target="Entidades.Pelicula" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="espectador" source="Entidades.Asiento" target="Entidades.Espectador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Entidades.Sala" target="Entidades.Asiento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Service.ServiceSala" target="Entidades.Asiento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="espectadores" source="Entidades.Sala" target="Entidades.Espectador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Espectador&gt;"/>
     <UseRelation source="Service.ServiceSala" target="Entidades.Espectador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entidades.Asiento" target="Entidades.Espectador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Service.ServiceSala" target="Entidades.Sala" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entidades.Sala" target="Entidades.Espectador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entidades.Sala" target="Entidades.Asiento" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="Entidades.Sala" target="Entidades.Pelicula" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="pelicula" source="Entidades.Sala" target="Entidades.Pelicula" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Service.ServiceSala" target="Entidades.Asiento" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Entidades.Asiento" target="Entidades.Espectador" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Service.ServiceSala" target="Entidades.Pelicula" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="asientos" source="Entidades.Sala" target="Entidades.Asiento" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Asiento&gt;"/>
   </ClassDiagramRelations>
 </ClassDiagram>
