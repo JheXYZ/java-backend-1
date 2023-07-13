@@ -46,5 +46,4 @@ public class Estudiante extends Persona{
         return "Estudiante{" + super.toString() + ", Cursos=" + cursos + '}';
     }
     
-    
 }

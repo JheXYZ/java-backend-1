@@ -1,52 +1,78 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+   
  */
 package trash;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
  * @author JheX
  */
 public class Trash {
 
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-//        Una automotriz está por lanzar al mercado un nuevo automóvil, pero aún no decidió su 
-//        nombre. Desde Mercadotecnia, le sugieren a la Gerencia que use el nombre de un animal. Para 
-//        resolver dicho problema, el Departamento de Sistemas planea desarrollar un programa que contenga 
-//        en un vector los nombres de todos los animales y en otro, los nombres ya utilizados en el mercado, 
-//        por ellos y otras compañías. ¿Cómo debería proceder Sistemas para informar los posibles nombres a 
-//        la Gerencia?
-
-        String nombresUsados[] = new String[10];//{"", "Vaca", "Perro", "Gato", "Loro", "Chita", "Toro", "Caballo"};
-        String nombre;
-        int n = 1, i = 1;
-        
-        nombresUsados[n] = leer.next();
-        while(!nombresUsados[n].equals("0")){
-            n++;
-            nombresUsados[n] = leer.next();
-        }
-        nombre = leer.next();
-        while (!nombre.equals("0")){
-            while (i < n){
-                if (nombresUsados[i].equalsIgnoreCase(nombre)){
-                    System.out.println("Este nombre ya existe: " + nombre);
-                    i = n;
-                }
-                i++;
-            } 
-            if (i == n){
-                System.out.println("Este nombre esta disponible: " + nombre);
+        long inicio = System.currentTimeMillis();
+        System.out.println(inicio);
+        double v[][] = new double[30][6];
+        System.out.println("Día |  00hs  |  4hs  |  8hs  |  12hs  |  16h  |  20hs");
+        for (int i = 0; i < 30; i++) {
+            if (i < 9){
+                System.out.print((i+1) + "     ");
+            } else {
+                System.out.print((i+1) + "    ");
             }
-            i = 1;
-            nombre = leer.next();
+            for (int j = 0; j < 6; j++) {
+                v[i][j] = Math.round((Math.random()*31)*100d)/100d;
+                System.out.print(v[i][j] + "    ");
+            }
+            System.out.println("");
         }
+        double minT[] = {v[1][1], 1, 1};
+        double maxT[] = {0, 0, 0};
+        double tem[][] = new double [30][4];
+        for (int i = 0; i < 30; i++) {
+            tem[i][0] = 0;
+            tem[i][1] = v[i][1];
+            tem[i][2] = 0;
+            for (int j = 0; j < 6; j++) {
+                tem[i][2] += v[i][j];
+                if(v[i][j] > tem[i][0]){
+                    tem[i][0] = v[i][j];
+                    if (tem[i][0] > maxT[0]){
+                        maxT[0] = tem[i][0];
+                        maxT[1] = 4 * j;
+                        maxT[2] = i + 1;
+                    }
+                } else if (v[i][j] < tem[i][1]){
+                    tem[i][1] = v[i][j];
+                    if (tem[i][1] < minT[0]){
+                        minT[0] = tem[i][1];
+                        minT[1] = 4 * j;
+                        minT[2] = i + 1;
+                    } 
+                }
+            }
+            tem[i][2] = (Math.round((tem[i][2]*100)/6)) / 100d;
+            tem[i][3] = Math.round((tem[i][0] - tem[i][1]) * 100d) / 100d;
+        }
+        
+        System.out.println("\nDia |  Max  |  Min  |  Prom  |  APT");
+        for (int i = 0; i < 30; i++) {
+            if (i < 9){
+                System.out.print((i+1) + "    ");
+            } else {
+                System.out.print((i+1) + "   ");
+            }
+            
+            for (int j = 0; j < 4; j++) {
+                System.out.print(tem[i][j] + "    ");
+            }
+            System.out.println("");
+        }
+        System.out.println("El día con mayor temperatura: Día: " + (int)maxT[2] + ", C°: "+ maxT[0] + " a hs: " + maxT[1]);
+        System.out.println("El día con menor temperatura: Día: " + (int)minT[2] + ", C°: "+ minT[0] + " a hs: " + minT[1]);
+        long fin = System.currentTimeMillis();
+        System.out.println("Tiempo ejecucion: " + (fin - inicio));
     }
-    
 }

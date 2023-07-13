@@ -38,7 +38,6 @@ public class Profesor extends Empleado{
         departamento = leer.next();
     }
     
-    
     @Override
     public String toString() {
         return "Profesor{" + super.toString() + ", Departamento=" + departamento + '}';

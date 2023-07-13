@@ -47,7 +47,6 @@ public class Extras_2_edificios {
         
         int PolisCerrados = 0, PolisAbiertos = 0;
         for (Edificio edificio : Edificios) {
-            
             if (edificio instanceof Polideportivo){
                 System.out.println("Este Polideportivo tiene: " + edificio.calcularSuperficie() + " m² y ocupa " + edificio.calcularVolumen() + " m³");
                 if (((Polideportivo) edificio).getTipo().equals("Abierto")){

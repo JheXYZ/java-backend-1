@@ -70,7 +70,6 @@ public class Extras_4_universidad {
                             perServicio.crearPersona();
                             Personas.add(perServicio);
                         }
-
                     }
                 }
                 case 2 -> {
@@ -135,6 +134,5 @@ public class Extras_4_universidad {
                 case 4 -> fin = true;
             }
         }
-
     }
 }

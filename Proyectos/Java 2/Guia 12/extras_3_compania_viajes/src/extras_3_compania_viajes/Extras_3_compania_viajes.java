@@ -82,7 +82,7 @@ public class Extras_3_compania_viajes {
         ArrayList<Hotel> hoteles = new ArrayList();
         for (Alojamiento hotel : Alojamientos) {
             if (hotel instanceof Hotel_5){
-                hoteles.add((Hotel_4) hotel);
+                hoteles.add((Hotel_5) hotel);
             } else if (hotel instanceof Hotel_4){
                 hoteles.add((Hotel_4) hotel);
             }

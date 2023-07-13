@@ -57,5 +57,4 @@ public final class Hotel_5 extends Hotel_4{
         return super.toString() + "cantSalonConferencia=" + cantSalonConferencia + ", cantSuites=" + cantSuites + ", cantLimosinas=" + cantLimosinas + '}';
     }
     
-    
 }
